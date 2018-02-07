@@ -1,0 +1,55 @@
+[user]
+	name = Paolo G. Giarrusso
+	email = p.giarrusso@gmail.com
+[github]
+	token = 3e850594405cfbe4f557fb75f6b14568
+	user = Blaisorblade
+[gui]
+[cola]
+	fontdiff = Consolas,13,-1,5,50,0,0,0,0,0
+	savewindowsettings = false
+[core]
+	pager = less -+$LESS -FRX -i
+	excludesfile = ~/.cvsignore
+[color]
+	ui = true
+[merge]
+	defaultToUpstream = true
+[tar "tar.xz"]
+	command = xz -c
+[tar "tar.bz2"]
+	command = bzip2 -c
+[push]
+	default = simple
+[ghi]
+	token = f7938dbf226cb13c56dd5b61508f151cb1473c05
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[pretty]
+	onelineauth = format:%C(yellow)%h%Creset %<(10,trunc)%Cblue%an%Creset   %<(10,trunc)%Cgreen%ar%Creset   %s
+[alias]
+	di = diff
+	st = status
+	dif = diff
+	logs = log --pretty=onelineauth
+[sendemail]
+	smtpencryption = tls
+	smtpserver = smtp.gmail.com
+	smtpuser = p.giarrusso@gmail.com
+	smtppass = rcyziewinduofawn
+	smtpserverport = 587
+	confirm = auto
+[difftool "latexdiff"]
+	cmd = latexdiff \"$LOCAL\" \"$REMOTE\"
+[credential]
+	helper = osxkeychain
+[rerere]
+	enabled = true
+[fetch]
+	prune = true
+[remote]
+	pushDefault = origin
