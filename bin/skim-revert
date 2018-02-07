@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# skim-revert (Skim)
+#
+# Usage: skim-revert [-g] PDFFILE
+
+if [[ $# -eq 0 || "$1" == "-h" || "$1" == "-help" ]]; then
+  echo "Usage: skim-revert [-g] PDFFILE
+-g, -background  Do not bring Skim to the foreground"
+  exit 0
+fi
+
+# get arguments
+activate=true
+while [[ "${1:0:1}" == "-" ]]; do
+  if [[ "$1" == "-g" || "$1" == "-background" ]]; then
+    activate=false
+  fi
+  shift
+done
+
+# the first argument should be the PDF file, with or without extension
+file="$1"
+# expand relative paths
+[[ "${file:0:1}" == "/" ]] || file="${PWD}/${file}"
+pdffile="$(basename ${file} .pdf).pdf"
+
+/usr/bin/osascript << EOF
+  set theFile to POSIX file "$file"
+  set thePath to POSIX path of (theFile as alias)
+  tell application "Skim"
+    if $activate then activate
+    try
+      set theDocs to get documents whose path is thePath
+      if (count of theDocs) > 0 then revert theDocs
+    end try
+    open theFile
+  end tell
+EOF
