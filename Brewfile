@@ -10,7 +10,6 @@ brew "aspell"
 brew "cairo"
 brew "colordiff"
 brew "coreutils"
-brew "emacs", link: false
 brew "fswatch"
 brew "libtiff"
 brew "git"
