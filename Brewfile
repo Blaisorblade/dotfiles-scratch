@@ -26,6 +26,7 @@ brew "gnu-tar"
 brew "gnupg", link: false
 brew "grep", args: ["with-default-names"]
 brew "haskell-stack"
+brew "idris"
 brew "links"
 brew "mackup"
 brew "make"
@@ -53,6 +54,7 @@ brew "vim"
 brew "watch"
 brew "wget"
 brew "d12frosted/emacs-plus/emacs-plus"
+brew "lampepfl/brew/dotty"
 cask "discord"
 cask "gpg-suite"
 cask "intellij-idea-ce"
@@ -75,6 +77,7 @@ mas "iMovie", id: 408981434
 mas "iPhoto", id: 408981381
 mas "Keynote", id: 409183694
 mas "Microsoft OneNote", id: 784801555
+mas "Kindle", id: 405399194
 mas "Numbers", id: 409203825
 mas "OneDrive", id: 823766827
 mas "Pages", id: 409201541
