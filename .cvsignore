@@ -11,6 +11,7 @@ auto/
 *.bbl
 comment.cut
 texput.log
+*.out
 *.o
 *.hi
 *.tmp
@@ -30,3 +31,6 @@ Session.vim
 .stack-work/
 .dotty-ide-artifact
 .dotty-ide.json
+# Coq
+*.glob
+*.vo
